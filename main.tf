@@ -3,12 +3,32 @@ data "tfe_organization_membership" "default" {
   email        = var.email
 }
 
+resource "tfe_team" "default" {
+  name         = var.application_name
+  organization = data.tfe_organization_membership.default.organization
+}
+
+resource "tfe_team_member" "default" {
+  team_id  = tfe_team.default.id
+  username = var.username
+}
+
+resource "tfe_team_token" "default" {
+  team_id = tfe_team.default.id
+}
+
 resource "tfe_workspace" "default" {
   name                 = var.application_name
   organization         = data.tfe_organization_membership.default.id
   allow_destroy_plan   = true
   execution_mode       = "remote"
   file_trigger_enabled = false
+}
+
+resource "tfe_team_access" "default" {
+  access       = "write"
+  team_id      = tfe_team.default.id
+  workspace_id = tfe_workspace.default.id
 }
 
 resource "tfe_variable" "vault_addr" {
