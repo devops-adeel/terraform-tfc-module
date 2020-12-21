@@ -13,7 +13,12 @@ variable "vault_address" {
   type        = string
 }
 
-variable "vault_token" {
-  description = "Vault token"
+variable "vault_approle_id" {
+  description = "Vault Approle ID"
+  type        = string
+}
+
+variable "vault_approle_secret" {
+  description = "Vault Approle Secret ID"
   type        = string
 }

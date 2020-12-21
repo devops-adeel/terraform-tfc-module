@@ -20,12 +20,21 @@ resource "tfe_variable" "vault_addr" {
   sensitive    = true
 }
 
-resource "tfe_variable" "vault_token" {
-  key          = "VAULT_TOKEN"
-  value        = var.vault_token
-  category     = "env"
+resource "tfe_variable" "approle_id" {
+  key          = "approle_id"
+  value        = var.vault_approle_id
+  category     = "terraform"
   workspace_id = tfe_workspace.default.id
-  description  = "Vault Token"
+  description  = "Vault Approle ID"
+  sensitive    = true
+}
+
+resource "tfe_variable" "approle_secret" {
+  key          = "approle_secret"
+  value        = var.vault_approle_secret
+  category     = "terraform"
+  workspace_id = tfe_workspace.default.id
+  description  = "Vault Approle ID"
   sensitive    = true
 }
 
