@@ -19,7 +19,7 @@ resource "tfe_team_token" "default" {
 
 resource "tfe_workspace" "default" {
   name                  = var.application_name
-  organization          = data.tfe_organization_membership.default.id
+  organization          = data.tfe_organization_membership.default.organization
   allow_destroy_plan    = true
   execution_mode        = "remote"
   file_triggers_enabled = false
