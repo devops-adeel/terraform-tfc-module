@@ -3,8 +3,8 @@ output "workspace_id" {
   value       = tfe_workspace.default.id
 }
 
-output "tfe_token" {
-  description = "TFE token to be used by GH Actions"
+output "tfc_token" {
+  description = "TFC token to be used by GH Actions"
   value       = tfe_team_token.default.token
   sensitive   = true
 }

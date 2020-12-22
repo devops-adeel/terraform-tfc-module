@@ -18,11 +18,11 @@ resource "tfe_team_token" "default" {
 }
 
 resource "tfe_workspace" "default" {
-  name                 = var.application_name
-  organization         = data.tfe_organization_membership.default.id
-  allow_destroy_plan   = true
-  execution_mode       = "remote"
-  file_trigger_enabled = false
+  name                  = var.application_name
+  organization          = data.tfe_organization_membership.default.id
+  allow_destroy_plan    = true
+  execution_mode        = "remote"
+  file_triggers_enabled = false
 }
 
 resource "tfe_team_access" "default" {
