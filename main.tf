@@ -68,7 +68,7 @@ resource "tfe_variable" "vault_token_name" {
 
 resource "tfe_variable" "vault_namespace" {
   key          = "VAULT_NAMESPACE"
-  value        = var.application_name
+  value        = var.vault_namespace
   category     = "env"
   workspace_id = tfe_workspace.default.id
   description  = "Vault Namespace"

@@ -27,3 +27,8 @@ variable "vault_approle_secret" {
   description = "Vault Approle Secret ID"
   type        = string
 }
+
+variable "vault_namespace" {
+  description = "Vault namespace to add as TFC variable"
+  type = string
+}

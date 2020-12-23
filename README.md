@@ -18,6 +18,7 @@ No requirements.
 | `vault_address` | Vault Address URL | `string` | n/a | yes |
 | `vault_approle_id` | Vault Approle ID | `string` | n/a | yes |
 | `vault_approle_secret` | Vault Approle Secret ID | `string` | n/a | yes |
+| `vault_namespace` | Vault namespace to add as TFC variable | `string` | n/a | yes |
 
 ## Outputs
 
