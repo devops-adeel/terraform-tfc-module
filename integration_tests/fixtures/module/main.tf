@@ -1,23 +1,3 @@
-/**
- * Usage:
- *
- * ```hcl
- *
- * module "terraform_workspace" {
- *   source               = "git::https://github.com/devops-adeel/terraform-tfc-module.git?ref = v0.1.0"
- *   entity_ids           = [module.vault_approle.entity_id]
- *   application_name     = local.application_name
- *   email                = local.email
- *   username             = local.username
- *   vault_address        = var.vault_address
- *   vault_approle_id     = module.vault_approle_admin.approle_id
- *   vault_approle_secret = module.vault_approle_admin.approle_secret
- *   vault_namespace      = trimsuffix(vault_namespace.default.id, "/")
- * }
- * ```
- */
-
-
 data "tfe_organization_membership" "default" {
   organization = "hc-implementation-services"
   email        = var.email

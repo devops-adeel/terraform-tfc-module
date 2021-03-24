@@ -13,8 +13,3 @@ output "tfc_token" {
   value       = tfe_team_token.default.token
   sensitive   = true
 }
-
-output "tfc_team_id" {
-  description = "Terraform Cloud Team ID"
-  value       = tfe_team.default.id
-}
